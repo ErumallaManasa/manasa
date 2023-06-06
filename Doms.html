@@ -1,0 +1,78 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body{
+        background-color: yellow;
+      }
+      .result{
+        display: none;
+      }
+    </style>
+</head>
+<body>
+  <div class="result">
+  </div>
+    <form>
+    <p>1.HTML5 Stands for </p>
+    <input type="radio" name="q1" value="A">
+    <label for="">A.Hyper Text Mark Up Language</label><br>
+    <input type="radio" name="q1" value="B">
+    <label for="">B.Hypering Text Mark Up Language</label><br>
+    <input type="radio" name="q1" value="C">
+    <label for="">C.XYZ</label><br>
+
+    <p>2.CSS3 Stands for </p>
+    <input type="radio" name="p2" value="A">
+    <label for="">A.Casade Style Sheets</label><br>
+    <input type="radio" name="p2" value="B">
+    <label for="">B.Cascading Style Sheets</label><br>
+    <input type="radio" name="p2" value="C">
+    <label for="">C.XYZ2</label><br>
+
+    <p>3.JS Stands for </p>
+    <input type="radio" name="s3" value="A">
+    <label for="">A.Java Scripting</label><br>
+    <input type="radio" name="s3" value="B">
+    <label for="">B.JavaScript</label><br>
+    <input type="radio" name="s3" value="C">
+    <label for="">C.XYZ3</label><br><br><br>
+
+<input type="submit" value="Submit">   
+
+</form>
+<script>
+  
+    var f1=document.querySelector("form")
+    var r1=document.querySelector(".result")
+    var key=['A','B','B'];
+   
+    f1.addEventListener("submit",function(e)
+    {
+        var score=0
+        e.preventDefault();
+        r1.style.display="block";
+      var userAnswers=[f1.q1.value,f1.p2.value,f1.s3.value];
+      userAnswers.forEach(function(m1,index)
+      {
+      console.log(m1===key[index])
+        if(m1===key[index]){
+           score=score+25;
+        
+    }
+       
+      })
+      console.log(score);
+      r1.querySelector('span').textContent='Thanks for writing this exam';
+    })
+
+    f1.reset();
+    
+</script>
+</body>
+</html>

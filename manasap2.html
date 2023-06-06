@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+    }
+    input{
+        display: none;
+    }
+    .container{
+        width: 100%;
+        text-align: center;
+        
+    }
+    h3{
+     font-weight:normal;
+     font-size: 35px;
+     position: relative;
+     margin: 40px 0;
+
+    }
+    h3::before{
+        content:'';
+        position: absolute;
+        width: 100px;
+        height: 35px;
+        background-color: crimson;
+        bottom: -10px;
+        left:50px;
+        transform: translateX(-50%);
+        animation: animate 4s liner infinite;
+    }
+    @keyframes animate {
+        0%{
+            width: 100px;
+        } 
+        50%{
+            width: 200px;
+        }
+        100%{
+            width: 200px;
+        }
+    }
+    .top-content{
+        background-color: rgb(232, 236, 238);
+        width: 90%;
+        margin: 0 auto 20px auto;
+        height: 60;
+        display: flex;
+        align-items: center;
+        border-radius: 5px;
+        box-shadow: 3px 3px 5px lightgray;
+    }
+    h4{
+        height: 100%;
+        background-color: lightgray;
+        line-height: 60px;
+        padding: 0 50px;
+        color: white;
+    }
+    label{
+        display: inline-block;
+        height: 100%;
+        margin: 0 20px;
+        padding:0  30px;
+        line-height: 60px;
+        font-size: 18px;
+        color: gray;
+        cursor: pointer;
+        transition: .5s;
+        
+    }
+    label :hover{
+        color: black;
+    }
+    .photo-gallery{
+        width: 90%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(4 1fr);
+        grid-gap:20px;
+
+    }
+    .pic{
+        position: relative;
+        height: 230px;
+        border-radius: 0ch10px;
+        box-shadow: 3px 3px 5px  lightgray;
+    }
+    .pic img{
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+    }
+    pic::before{
+        content: "photo grallery";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50% -50%);
+        color: white;
+        font-size: 22px;
+        font-weight: bold;
+        width: 100%;
+        margin-top: 100px;
+        opacity: 0;
+        transition: .3s;
+        transition-delay: .2s;
+
+    }
+    .pic:after{
+        content: "";
+        position:absolute;
+        width: 100%;
+        bottom: 0;
+        left:0;
+        border-radius: 10px;
+        height: 0;
+        background-color: black;
+        transition: .3s;
+
+    }
+    .pic:hover::after{
+        height: 100%;
+
+    }
+    .pic:hover::before{
+        margin-top: 0;
+        opacity: 1;
+
+    }
+    
+    
+    </style>
+<body>
+<input type="radio" name="photos"id="check1" checked>
+<input type="radio" name="photos"id="check1">
+<input type="radio" name="photos"id="check1">
+<input type="radio" name="photos"id="check1">
+
+<div class="container">
+    <h3>gallery</h3>
+    <div class="top-content">
+<h4> photo Gallery</h4>
+<label for="check1" id="label">AllPhotos</label>
+<label for="check2">FamilyPhotos</label>
+<label for="check3">ChildPhotos</label>
+<label for="check4">VisitedPhotos</label>
+</div>
+</div>
+<div class="photo-gallery">
+    <center><div class="pic place">
+        <img src="https://img.traveltriangle.com/blog/wp-content/uploads/2018/01/Mirasol-Lake-Garden.jpg">
+        </div>
+        <div class="pic family">
+            <img src="https://www.dreamsanddarlings.com/wp-content/uploads/2020/08/hen-san-dimas-walnut-creek-family-photography-1-1024x683.jpg">
+            </div>
+        <div class="pic child">
+            <img src="https://cdn.shopify.com/s/files/1/0102/0112/files/green_newborn_fluff_1200x.jpg">
+            </div></center>
+        <div class="pic place">
+            <img src="https://images.squarespace-cdn.com/content/v1/50305c7684ae7fae2e65756a/1476500564195-VS7OKXGXJODA17CQLDQO/image-asset.jpeg?format=1000w">
+        </div>
+        <div class="pic family">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeDSVVK7tTdRrKLyVrm3DzEYbeNWBkXYjMEA&usqp=CAU">
+        </div>
+        <div class="pic child ">
+            <img src="https://parulankur.com/wp-content/uploads/2021/03/outdoor_by_parul_and_ankur00025.jpg">
+        </div>
+        <div class="pic place">
+       <img src="https://expertphotography.b-cdn.net/wp-content/uploads/2021/05/iconic-places-photography-paris.jpg">
+        </div>
+        <div class="pic family">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzQtk6rHAe78yDGmJe20T-2F2pvBHeso4ftw&usqp=CAU">
+             </div>
+             <div class="pic child">
+                <img src="https://www.studioshiv.com/wp-content/uploads/2022/07/1yearboy65.jpg">
+                 </div>
+        
+        </div> 
+        </div>
+</body>
+</html>

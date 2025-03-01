@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(31, 226, 31);
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        #counter {
+            color: rgb(114, 112, 228);
+            font-size: 3rem;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+p{
+    color: rgb(230, 22, 29);
+    font-size: 50px;
+}
+h1{
+    font-weight: bold;
+    font-size: 100px;
+}
+    </style>
+</head>
+
+<body>
+    <h1>MICROSOFT DIGITAL LAB</h1>
+   <p>COUNTS DECREMENT</p>
+    <div id="counter">100</div>
+
+    <script>
+        let upto = 100;
+        let counts = setInterval(updated, 20);
+
+        function updated() {
+            let count = document.getElementById("counter");
+            count.innerHTML = --upto;
+            if (upto === 0) {
+                clearInterval(counts);
+            }
+        }
+    </script>
+
+
+    
+</body>
+</html>

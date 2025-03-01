@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    const monthNameEl = document.getElementById("month-name");
+const dayNameEl = document.getElementById("day-name");
+const dayNumEl = document.getElementById("day-number");
+const yearEl = document.getElementById("year");
+
+const date = new Date();
+const month = date.getMonth();
+monthNameEl.innerText = date.toLocaleString("en", {
+  month: "long",
+});
+
+dayNameEl.innerText = date.toLocaleString("en", {
+  weekday: "long",
+});
+
+dayNumEl.innerText = date.getDate();
+
+yearEl.innerText = date.getFullYear();
+</script>
+</body>
+</html>

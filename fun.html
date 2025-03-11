@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+  font-family: Arial, sans-serif;
+  background-color: #84e2f2;
+}
+
+#heading {
+  color: #3d27e2;
+}
+
+input[type="number"] {
+  width: 200px;
+  height: 30px;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+#button {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#button:hover {
+  background-color: #3e8e41;
+}
+
+#result {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+        </style>
+</head>
+<body>
+    <h1 id="heading">JavaScript Functions</h1>
+  <input type="number" id="num1" placeholder="Enter first number">
+  <input type="number" id="num2" placeholder="Enter second number">
+  <button id="button">Calculate</button>
+  <p id="result"></p>
+<script>
+    function add(num1, num2) {
+  return num1 + num2;
+}
+
+// Function to subtract two numbers
+function subtract(num1, num2) {
+  return num1 - num2;
+}
+
+// Function to multiply two numbers
+function multiply(num1, num2) {
+  return num1 * num2;
+}
+
+// Function to divide two numbers
+function divide(num1, num2) {
+  if (num2 === 0) {
+    return "Error: Division by zero is not allowed.";
+  } else {
+    return num1 / num2;
+  }
+}
+
+// Function to calculate and display result
+function calculate() {
+  const num1 = parseFloat(document.getElementById("num1").value);
+  const num2 = parseFloat(document.getElementById("num2").value);
+  const operation = prompt("Enter operation (+, -, *, /):");
+
+  let result;
+
+  switch (operation) {
+    case "+":
+      result = add(num1, num2);
+      break;
+    case "-":
+      result = subtract(num1, num2);
+      break;
+    case "*":
+      result = multiply(num1, num2);
+      break;
+    case "/":
+      result = divide(num1, num2);
+      break;
+    default:
+      result = "Error: Invalid operation.";
+  }
+
+  document.getElementById("result").innerHTML = `Result: ${result}`;
+}
+
+// Add event listener to button
+document.getElementById("button").addEventListener("click", calculate);
+
+    </script>
+ 
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+      }
+      
+      #heading {
+        color: #00698f;
+      }
+      
+      #button {
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      
+      #button:hover {
+        background-color: #3e8e41;
+      }
+      
+      #output {
+        margin-top: 20px;
+      }
+   </style>   
+</head>
+<body>
+    <h1 id="heading">JavaScript Loops</h1>
+  <button id="button">Run Loops</button>
+  <div id="output"></div>
+
+  <script>
+    function runLoops() {
+  const outputDiv = document.getElementById("output");
+
+  // For Loop
+  outputDiv.innerHTML += "<h2>For Loop:</h2>";
+  for (let i = 0; i < 5; i++) {
+    outputDiv.innerHTML += `<p>My name is rishitha ${i + 1}</p>`;
+  }
+
+  // While Loop
+  outputDiv.innerHTML += "<h2>While Loop:</h2>";
+  let i = 0;
+  while (i < 10) {
+    outputDiv.innerHTML += `<p>Iam studying 6th standred ${i + 1}</p>`;
+    i++;
+  }
+
+  // Do-While Loop
+  outputDiv.innerHTML += "<h2>Do-While Loop:</h2>";
+  i = 0;
+  do {
+    outputDiv.innerHTML += `<p>My School Name is TGSWRS/JC(G),Bellampally ${i + 1}</p>`;
+    i++;
+  } while (i < 15);
+    }
+  // Add event listener to button
+document.getElementById("button").addEventListener("click", runLoops);
+  </script>
+</body>
+</html>
